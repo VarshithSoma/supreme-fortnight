@@ -1,0 +1,26 @@
+{
+  "name": "supreme-fortnight",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VarshithSoma/supreme-fortnight.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VarshithSoma/supreme-fortnight/issues"
+  },
+  "homepage": "https://github.com/VarshithSoma/supreme-fortnight#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "puppeteer": "^24.10.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
