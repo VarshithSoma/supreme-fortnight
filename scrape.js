@@ -1,14 +1,13 @@
 const puppeteer = require("puppeteer");
 const fs = require("fs");
-
-(async () => {
+const scrapeData = async function () {
   const browser = await puppeteer.launch({
     headless: "new",
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
-      "--disable-blink-features=AutomationControlled"
-    ]
+      "--disable-blink-features=AutomationControlled",
+    ],
   });
 
   const page = await browser.newPage();
@@ -25,8 +24,8 @@ const fs = require("fs");
   console.log("Navigating to LeetCode contests page...");
   try {
     await page.goto("https://leetcode.com/contest/", {
-      waitUntil: "domcontentloaded", 
-      timeout: 30000, 
+      waitUntil: "domcontentloaded",
+      timeout: 30000,
     });
   } catch (error) {
     console.error(" Navigation error:", error);
@@ -59,5 +58,5 @@ const fs = require("fs");
   await browser.close();
   console.log("Scraped Contests:");
   console.log(data);
-})();
-
+};
+module.exports = scrapeData;
