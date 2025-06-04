@@ -4,7 +4,7 @@ const scrapeData = require("./scrape.js");
 // seconds 10
 //* * * * *
 //minutes hours days (every day of week) and (month)
-const job = new CronJob("0 0 23 * * 6,0", async () => {
+const job = new CronJob("*/10 * * * * *", async () => {
   scrapeData();
 });
 job.start();
