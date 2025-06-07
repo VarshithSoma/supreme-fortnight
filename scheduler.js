@@ -1,11 +1,11 @@
 const { CronJob } = require("cron");
-const scrapeData = require("./scrape.js");
+const scrapeAndSave = require("./scrape.js");
 // */10 * * * * *
 // seconds 10
 //* * * * *
 //minutes hours days (every day of week) and (month)
 const job = new CronJob("*/10 * * * * *", async () => {
-  scrapeData();
+  scrapeAndSave();
 });
 job.start();
 //it runs tasks at exact times (like “every day at 6 AM”),

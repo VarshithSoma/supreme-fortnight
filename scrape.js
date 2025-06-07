@@ -63,4 +63,4 @@ async function scrapeAndSave() {
   }
 }
 
-module.exports = { scrapeAndSave };
+module.exports = scrapeAndSave;
