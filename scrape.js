@@ -35,20 +35,26 @@ async function scrapeAndSave() {
 
     console.log("Extracting contest data...");
     const data = await page.evaluate(() => {
-      const contestElements = document.querySelectorAll(
-        "div.flex.items-center"
-      );
-      return Array.from(contestElements)
-        .map((element) => {
+      const slides = document.querySelectorAll(".swiper-slide");
+      return Array.from(slides)
+        .map((slide) => {
           const title =
-            element.querySelector("span.transition-colors")?.textContent ||
+            slide.querySelector("span.transition-colors")?.textContent.trim() ||
             "N/A";
           const date =
-            element.querySelector("div.text-label-2")?.textContent || "N/A";
+            slide.querySelector("div.text-label-2")?.textContent.trim() ||
+            "N/A";
+          const countdownRaw =
+            slide
+              .querySelector(".absolute.bottom-0 .flex.items-center")
+              ?.textContent.trim() || "N/A";
+          const countdown = countdownRaw.replace("Starts in ", "").trim();
+          const link = slide.querySelector("a")?.href || "N/A";
+          const img = slide.querySelector("img")?.src || "N/A";
           if (title === "N/A" || date === "N/A") return null;
-          return { title, date };
+          return { title, date, countdown, link, img };
         })
-        .filter((el) => el !== null);
+        .filter(Boolean);
     });
 
     console.log(`Scraped ${data.length} contests. Saving to cache...`);
@@ -62,5 +68,6 @@ async function scrapeAndSave() {
     await browser.close();
   }
 }
+scrapeAndSave();
 
 module.exports = scrapeAndSave;

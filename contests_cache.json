@@ -1,10 +1,16 @@
 [
   {
-    "title": "Weekly Contest 453",
-    "date": "Sunday 8:00 AM GMT+5:30"
+    "title": "Weekly Contest 462",
+    "date": "Sunday 8:00 AM GMT+5:30",
+    "countdown": "1d 2h 19m 21s",
+    "link": "https://leetcode.com/contest/weekly-contest-462",
+    "img": "https://assets.leetcode.com/contest-config/contest/wc_card_img.png"
   },
   {
-    "title": "Biweekly Contest 158",
-    "date": "Saturday 8:00 PM GMT+5:30"
+    "title": "Biweekly Contest 163",
+    "date": "Saturday 8:00 PM GMT+5:30",
+    "countdown": "7d 14h 19m 21s",
+    "link": "https://leetcode.com/contest/biweekly-contest-163",
+    "img": "https://assets.leetcode.com/contest-config/contest/bc_card_img.png"
   }
 ]
